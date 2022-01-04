@@ -10,7 +10,7 @@ jobs:
     - name: Build
       run: |
         set -eux
-        docker run --rm -v "$(pwd)":/home/rust/src ekidd/rust-musl-builder:1.48.0 sh -c 'sudo chown -R rust:rust . && cargo build --release'
+        docker run --rm -v "$(pwd)":/home/rust/src ekidd/rust-musl-builder sh -c 'sudo chown -R rust:rust . && cargo build --release'
         sudo chown -R $USER:$USER .
     - name: Archive
       run: |

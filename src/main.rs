@@ -96,7 +96,7 @@ fn main() -> io::Result<()> {
             let mut title = lines.next().unwrap();
             let html = markdown_to_html(&content);
 
-            output_json(filename, &title, &content, &output_dir);
+            output_json(filename, &title, &html, &output_dir);
             let d = DiaryList {title: title.to_string(), date: filename.to_string()};
             file_list.push(d);
         }
